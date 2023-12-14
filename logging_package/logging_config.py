@@ -6,7 +6,7 @@ LOGGING = {
     'handlers': {
         'debug_file': {
             'level': 'DEBUG',
-            'class': 'handlers.DateRotatingFileHandler',
+            'class': 'logging_package.handlers.DateRotatingFileHandler',
             'filename': 'debug.log',
             'when': 'midnight',
             'interval': 1,
@@ -15,7 +15,7 @@ LOGGING = {
         },
         'error_file': {
             'level': 'ERROR',
-            'class': 'handlers.DateRotatingFileHandler',
+            'class': 'logging_package.handlers.DateRotatingFileHandler',
             'filename': 'error.log',
             'when': 'midnight',
             'interval': 1,
@@ -24,7 +24,7 @@ LOGGING = {
         },
         'warning_file': {
             'level': 'WARNING',
-            'class': 'handlers.DateRotatingFileHandler',
+            'class': 'logging_package.handlers.DateRotatingFileHandler',
             'filename': 'warning.log',
             'when': 'midnight',
             'interval': 1,
@@ -33,7 +33,7 @@ LOGGING = {
         },
         'info_file': {
             'level': 'INFO',
-            'class': 'handlers.DateRotatingFileHandler',
+            'class': 'logging_package.handlers.DateRotatingFileHandler',
             'filename': 'info.log',
             'when': 'midnight',
             'interval': 1,
