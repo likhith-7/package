@@ -1,6 +1,5 @@
 import logging
-from handlers import LevelFilter, DateRotatingFileHandler
-
+from logging_package.handlers import LevelFilter, DateRotatingFileHandler
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
