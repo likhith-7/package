@@ -48,14 +48,18 @@ LOGGING = {
         'mail_admins': {
             'level': 'CRITICAL',  # Send emails for critical logs
             'class': 'django.utils.log.AdminEmailHandler',
-            'formatter': 'verbose',
+            'formatter': 'custom_email_formatter',
         },
     },
     'formatters': {
         'verbose': {
             'format' : '{asctime}:{levelname} - {name} {module}.py (line {lineno:d}). {message}',
             'style' : "{",
-        }
+        },
+        'custom_email_formatter': {
+            'format': '{asctime}:{levelname} - {name} {module}.py (line {lineno:d}). {subject}\n\n{message}\n\nLog Message: {log_message}',
+            'style': '{',
+        },
     },
     'filters': {
         'debug_filter': {'()': LevelFilter, 'level': logging.DEBUG},
