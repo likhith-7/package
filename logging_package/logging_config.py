@@ -40,6 +40,15 @@ LOGGING = {
             'formatter': 'verbose',
             'filters': ['info_filter']
         },
+        'critical_file': {
+            'level': 'CRITICAL',
+            'class': 'logging_package.handlers.DateRotatingFileHandler',
+            'filename': 'critical.log',
+            'when': 'midnight',
+            'interval': 1,
+            'formatter': 'verbose',
+            'filters': ['critical_filter']
+        },
         'console': {
             'level': 'ERROR',
             'class': 'logging.StreamHandler',
@@ -66,10 +75,11 @@ LOGGING = {
         'error_filter': {'()': LevelFilter, 'level': logging.ERROR},
         'warning_filter': {'()': LevelFilter, 'level': logging.WARNING},
         'info_filter': {'()': LevelFilter, 'level': logging.INFO},
+        'critical_filter': {'()': LevelFilter, 'level': logging.CRITICAL},
     },
     'loggers': {
         'django': {
-            'handlers': ['debug_file', 'error_file', 'warning_file', 'info_file', 'console','mail_admins'],
+            'handlers': ['debug_file', 'error_file', 'warning_file', 'info_file','critical_file', 'console','mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
