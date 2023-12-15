@@ -3,6 +3,7 @@ from pathlib import Path
 import logging
 from logging.handlers import TimedRotatingFileHandler
 from datetime import datetime
+import shutil
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
