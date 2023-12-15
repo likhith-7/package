@@ -66,7 +66,7 @@ LOGGING = {
             'style' : "{",
         },
         'custom_email_formatter': {
-            'format': '{asctime}:{levelname} - {name} {module}.py (line {lineno:d}). {subject}\n\n{message}\n\nLog Message: {log_message}',
+            'format': '{asctime}:{levelname} - {name} {module}.py (line {lineno:d}). {subject}\n\n{message}',
             'style': '{',
         },
     },
