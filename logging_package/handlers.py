@@ -32,14 +32,20 @@ def cleanup_old_log_folders():
         for folder in folders_to_delete:
             folder_path = os.path.join(LOGS_DIR, folder)
             if os.path.isdir(folder_path):
+                # try:
+                #     # Delete the contents within the folder before removing it
+                #     for root, dirs, files in os.walk(folder_path):
+                #         for file in files:
+                #             os.remove(os.path.join(root, file))
+                #     os.rmdir(folder_path)  # Remove the directory
+                # except OSError as e:
+                #     print(f"Error while deleting folder {folder_path}: {e}")
                 try:
-                    # Delete the contents within the folder before removing it
-                    for root, dirs, files in os.walk(folder_path):
-                        for file in files:
-                            os.remove(os.path.join(root, file))
-                    os.rmdir(folder_path)  # Remove the directory
-                except OSError as e:
-                    print(f"Error while deleting folder {folder_path}: {e}")
+                    # Attempt to remove the folder and its contents
+                    shutil.rmtree(folder_path)
+                    print(f"Folder '{folder_path}' and its contents deleted successfully.")
+                except Exception as e:
+                    print(f"Error while deleting folder '{folder_path}': {e}")
                     
                     
 cleanup_old_log_folders()
