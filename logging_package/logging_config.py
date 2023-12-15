@@ -45,6 +45,11 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
         },
+        'mail_admins': {
+            'level': 'CRITICAL',  # Send emails for critical logs
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'verbose',
+        },
     },
     'formatters': {
         'verbose': {
@@ -60,7 +65,7 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['debug_file', 'error_file', 'warning_file', 'info_file', 'console'],
+            'handlers': ['debug_file', 'error_file', 'warning_file', 'info_file', 'console','mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
