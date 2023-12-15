@@ -7,7 +7,7 @@ import shutil
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-LOGS_DIR = 'C:\\Users\\Likhith.gowda\\Desktop\\logsss'
+
 
 class LevelFilter(logging.Filter):
     def __init__(self, level):
