@@ -9,6 +9,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 LOGS_DIR = os.getenv('CUSTOM_LOGS_DIR')
 
+if not os.path.exists(LOGS_DIR):
+    os.makedirs(LOGS_DIR)
+
 class LevelFilter(logging.Filter):
     def __init__(self, level):
         self.level = level
