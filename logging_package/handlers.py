@@ -7,6 +7,7 @@ import shutil
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+LOGS_DIR = LOGS_DIR
 
 class LevelFilter(logging.Filter):
     def __init__(self, level):
