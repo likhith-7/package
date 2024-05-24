@@ -1,5 +1,8 @@
 import logging
+import os
 from logging_package.handlers import LevelFilter, DateRotatingFileHandler
+
+LOGGING_CONFIG = None
 
 LOGGING = {
     'version': 1,
@@ -46,6 +49,12 @@ LOGGING = {
             'class': 'logging.StreamHandler',
             'formatter': 'verbose'
         },
+        'celery_file': {
+            'level': 'DEBUG',
+            'class': 'logging_package.handlers.DateRotatingFileHandler',
+            'filename': 'celery.log',
+            'formatter': 'verbose'
+        },
     },
     'formatters': {
         'verbose': {
@@ -65,5 +74,11 @@ LOGGING = {
             'level': 'DEBUG',
             'propagate': True,
         },
+        'celery': {
+            'handlers': ['celery_file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
     },
 }
+logging.config.dictConfig(LOGGING)
