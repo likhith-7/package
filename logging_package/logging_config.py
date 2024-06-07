@@ -2,8 +2,6 @@ import logging
 import os
 from logging_package.handlers import LevelFilter, DateRotatingFileHandler
 
-LOGGING_CONFIG = None
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -81,4 +79,4 @@ LOGGING = {
         },
     },
 }
-logging.config.dictConfig(LOGGING)
+
